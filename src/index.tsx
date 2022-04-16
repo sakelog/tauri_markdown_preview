@@ -22,7 +22,16 @@ const theme = extendTheme(
   withDefaultSize({
     size: 'sm',
     components: ['Button'],
-  })
+  }),
+  {
+    components: {
+      FormLabel: {
+        baseStyle: {
+          fontWeight: 'semibold',
+        },
+      },
+    },
+  }
 );
 
 const container = document.getElementById('root');
