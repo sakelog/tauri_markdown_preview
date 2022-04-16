@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import 'style/global.scss';
-import '@fontsource/roboto';
 
 import { store } from 'redux/store';
 import { Provider } from 'react-redux';
@@ -26,7 +25,7 @@ const theme = extendTheme(
   }),
   {
     fonts: {
-      body: 'Roboto, Hiragino Sans, Hiragino Kaku Gothic ProN, Meiriyo,sans-serif',
+      body: '-apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial sans-serif, Apple Color Emoji, Segoe UI Emoji',
     },
     components: {
       FormLabel: {
