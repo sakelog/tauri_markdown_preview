@@ -1,7 +1,9 @@
 {
   "name": "tauri_markdown_preview",
+  "productName": "Tauri Markdown Previewer",
+  "description": "Markdown Preview With Tauri + React",
   "version": "0.1.0",
-  "private": true,
+  "license": "MIT",
   "dependencies": {
     "@chakra-ui/react": "^1.8.8",
     "@emotion/react": "^11.9.0",
