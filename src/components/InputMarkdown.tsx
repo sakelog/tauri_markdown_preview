@@ -15,8 +15,10 @@ import {
   Input,
   Textarea,
   Box,
+  Text,
 } from '@chakra-ui/react';
 import ButtonFileSaveAsMd from 'components/ButtonFileSaveAsMd';
+import SaveFeedback from 'components/SaveFeedback';
 
 function InputMarkdown() {
   const title = useSelector<RootState>(
@@ -25,6 +27,9 @@ function InputMarkdown() {
   const markdownBody = useSelector<RootState>(
     (state) => state.mainState.markdownBody
   ) as string;
+  const statusSaveMd = useSelector<RootState>(
+    (state) => state.mainState.statusSaveMd
+  ) as boolean;
 
   const dispatch = useDispatch<AppDispatch>();
   const onTitleChange = useCallback(
@@ -71,9 +76,20 @@ function InputMarkdown() {
           本文をマークダウン形式で入力
         </FormHelperText>
       </FormControl>
-      <Box pt={4}>
+      <Flex
+        pt={4}
+        alignItems="center"
+        justifyContent="space-between"
+        h={10}
+        flexWrap={{ base: 'wrap', md: 'nowrap' }}
+      >
         <ButtonFileSaveAsMd />
-      </Box>
+        <Box>
+          <Text fontSize="md">
+            <SaveFeedback status={statusSaveMd} />
+          </Text>
+        </Box>
+      </Flex>
     </Flex>
   );
 }

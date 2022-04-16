@@ -1,17 +1,22 @@
 import { useSelector } from 'react-redux';
 import { RootState } from 'redux/store';
 
-import { Flex, Box } from '@chakra-ui/react';
+import { Flex, Box, Text } from '@chakra-ui/react';
 import ButtonFileSaveAsHtml from 'components/ButtonFileSaveAsHtml';
 
 function Preview() {
   const htmlBody = useSelector<RootState>(
     (state) => state.mainState.htmlBody
   ) as string;
+  const statusSaveHtml = useSelector<RootState>(
+    (state) => state.mainState.statusSaveHtml
+  ) as boolean;
 
   return (
     <Flex h="100%" direction="column">
-      <Box pb={2}>プレビュー</Box>
+      <Box pb={2}>
+        <Text fontWeight="semibold">プレビュー</Text>
+      </Box>
       <Flex
         direction="column"
         flex="1"
@@ -93,9 +98,24 @@ function Preview() {
           }}
         />
       </Flex>
-      <Box pt={4}>
+      <Flex
+        pt={4}
+        alignItems="center"
+        justifyContent="space-between"
+        h={10}
+        flexWrap={{ base: 'wrap', md: 'nowrap' }}
+      >
         <ButtonFileSaveAsHtml />
-      </Box>
+        <Box>
+          <Text fontSize="md">
+            {statusSaveHtml === true
+              ? '保存成功'
+              : statusSaveHtml === false
+              ? '保存失敗'
+              : ''}
+          </Text>
+        </Box>
+      </Flex>
     </Flex>
   );
 }

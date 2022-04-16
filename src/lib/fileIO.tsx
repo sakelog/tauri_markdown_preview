@@ -6,32 +6,34 @@ import {
 
 // ファイルを開く
 export const fileOpen = async () => {
-  const paths = await dialog.open({
-    filters: [{ name: 'Markdown', extensions: ['md'] }],
-    multiple: false,
-  });
+  return dialog
+    .open({
+      filters: [{ name: 'Markdown', extensions: ['md'] }],
+      directory: false,
+      multiple: false,
+    })
+    .then(async (paths) => {
+      if (paths === null) {
+        return { status: null };
+      }
 
-  // キャンセルで閉じた場合
-  if (paths === undefined) {
-    return { status: undefined };
-  }
-
-  try {
-    const filePath = Array.isArray(paths)
-      ? paths[0]
-      : paths;
-    const buff = await readTextFile(filePath);
-    const title = await path.basename(filePath, '.md');
-    return {
-      satus: true,
-      path: filePath,
-      inputTitle: title,
-      inputMarkdownBody: buff,
-    };
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  } catch (error: any) {
-    return { status: false, message: error.message };
-  }
+      try {
+        const filePath = Array.isArray(paths)
+          ? paths[0]
+          : paths;
+        const buff = await readTextFile(filePath);
+        const title = await path.basename(filePath, '.md');
+        return {
+          satus: true,
+          path: filePath,
+          inputTitle: title,
+          inputMarkdownBody: buff,
+        };
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      } catch (error: any) {
+        return { status: false, message: error.message };
+      }
+    });
 };
 
 // ファイル保存：共通
@@ -44,36 +46,37 @@ const fileSaveCommon = async ({
   extension: string;
   data: FileIO.SaveFile;
 }) => {
-  const filePath = await dialog.save({
-    defaultPath: data.title,
-    filters: [{ name, extensions: [extension] }],
-  });
+  return dialog
+    .save({
+      defaultPath: data.title,
+      filters: [{ name, extensions: [extension] }],
+    })
+    .then(async (filePath) => {
+      if (filePath === null) {
+        return { status: null };
+      }
 
-  // キャンセルで閉じた場合
-  if (filePath === undefined) {
-    return { status: undefined };
-  }
+      try {
+        await writeFile({
+          path: filePath,
+          contents: data.body,
+        });
 
-  try {
-    await writeFile({
-      path: filePath,
-      contents: data.body,
+        const title = await path.basename(
+          filePath,
+          `.${extension}`
+        );
+
+        return {
+          status: true,
+          filePath: filePath,
+          outputTitle: title,
+        };
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      } catch (error: any) {
+        return { status: false, message: error.message };
+      }
     });
-
-    const title = await path.basename(
-      filePath,
-      `.${extension}`
-    );
-
-    return {
-      status: true,
-      filePath: filePath,
-      outputTitle: title,
-    };
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  } catch (error: any) {
-    return { status: false, message: error.message };
-  }
 };
 
 // ファイル保存：Markdown

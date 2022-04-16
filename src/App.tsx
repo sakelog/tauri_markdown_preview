@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import type { RootState, AppDispatch } from 'redux/store';
 import { setHtmlAll, setHtmlBody } from 'redux/lib/slice';

@@ -4,7 +4,7 @@ import { fileSaveMd } from 'lib/fileIO';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from 'redux/store';
-import { setTitle } from 'redux/lib/slice';
+import { setTitle, setStatusSaveMd } from 'redux/lib/slice';
 
 import { Button } from '@chakra-ui/react';
 
@@ -22,7 +22,13 @@ function ButtonFileSaveAsMd() {
       title,
       body: markdownBody,
     });
-    return status && dispatch(setTitle(outputTitle));
+    dispatch(setStatusSaveMd(status));
+    if (status) {
+      dispatch(setTitle(outputTitle));
+    }
+    setTimeout(() => {
+      dispatch(setStatusSaveMd(null));
+    }, 5000);
   }, [markdownBody]);
 
   return (
