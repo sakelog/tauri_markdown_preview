@@ -37,8 +37,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "lint": "eslint --fix --ext .ts,.tsx .",
     "tauri": "tauri",
-    "dev": "tauri dev"
+    "dev": "tauri dev",
+    "release": "tauri build"
   },
   "browserslist": {
     "production": [
