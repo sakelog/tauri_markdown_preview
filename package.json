@@ -8,6 +8,8 @@
     "@chakra-ui/react": "^1.8.8",
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
+    "@fontsource/roboto": "^4.5.5",
+    "@loadable/component": "^5.15.2",
     "@reduxjs/toolkit": "^1.8.1",
     "@tauri-apps/api": "^1.0.0-rc.3",
     "@testing-library/jest-dom": "^5.14.1",
@@ -56,6 +58,7 @@
   },
   "devDependencies": {
     "@tauri-apps/cli": "^1.0.0-rc.8",
+    "@types/loadable__component": "^5.13.4",
     "@typescript-eslint/eslint-plugin": "^5.19.0",
     "@typescript-eslint/parser": "^5.19.0",
     "cross-env": "^7.0.3",

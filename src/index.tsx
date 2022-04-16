@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import 'style/global.scss';
+import '@fontsource/roboto';
 
 import { store } from 'redux/store';
 import { Provider } from 'react-redux';
@@ -24,6 +25,9 @@ const theme = extendTheme(
     components: ['Button'],
   }),
   {
+    fonts: {
+      body: 'Roboto, Hiragino Sans, Hiragino Kaku Gothic ProN, Meiriyo,sans-serif',
+    },
     components: {
       FormLabel: {
         baseStyle: {
