@@ -1,12 +1,35 @@
-import { useEffect } from 'react';
+import { useEffect, Suspense, type ReactNode } from 'react';
 import { useSelector } from 'react-redux';
 import type { RootState } from 'redux/store';
 import { updateWindowTitle } from 'lib/updateWindowTitle';
 
 import Layout from 'layout/base';
-import InputMarkdown from 'components/InputMarkdown';
-import Preview from 'components/Preview';
-import { Grid, GridItem } from '@chakra-ui/react';
+import {
+  Grid,
+  GridItem,
+  Center,
+  Spinner,
+} from '@chakra-ui/react';
+
+import { lazy } from '@loadable/component';
+const InputMarkdown = lazy(
+  () => import('components/InputMarkdown')
+);
+const Preview = lazy(() => import('components/Preview'));
+
+const MySuspense = (props: { children: ReactNode }) => {
+  return (
+    <Suspense
+      fallback={
+        <Center h="100%">
+          <Spinner />
+        </Center>
+      }
+    >
+      {props.children}
+    </Suspense>
+  );
+};
 
 function App() {
   const title = useSelector<RootState>(
@@ -31,10 +54,14 @@ function App() {
         h="100%"
       >
         <GridItem p={4} h="100%">
-          <InputMarkdown />
+          <MySuspense>
+            <InputMarkdown />
+          </MySuspense>
         </GridItem>
         <GridItem h="100%" p={4} overflow="hidden">
-          <Preview />
+          <MySuspense>
+            <Preview />
+          </MySuspense>
         </GridItem>
       </Grid>
     </Layout>
