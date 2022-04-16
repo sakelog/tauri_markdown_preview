@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import type { RootState, AppDispatch } from 'redux/store';
-import { setHtmlAll, setHtmlBody } from 'redux/lib/slice';
+import { useSelector } from 'react-redux';
+import type { RootState } from 'redux/store';
 import { updateWindowTitle } from 'lib/updateWindowTitle';
 
 import Layout from 'layout/base';
@@ -10,21 +9,12 @@ import Preview from 'components/Preview';
 import { Grid, GridItem } from '@chakra-ui/react';
 
 function App() {
-  const dispatch = useDispatch<AppDispatch>();
-  const htmlBody = useSelector<RootState>(
-    (state) => state.mainState.htmlBody
-  ) as string;
-  const htmlAll = useSelector<RootState>(
-    (state) => state.mainState.htmlAll
-  ) as string;
   const title = useSelector<RootState>(
     (state) => state.mainState.title
   ) as string;
   useEffect(() => {
     updateWindowTitle(title);
-    dispatch(setHtmlBody());
-    dispatch(setHtmlAll());
-  }, [title, htmlBody, htmlAll]);
+  }, [title]);
 
   return (
     <Layout>

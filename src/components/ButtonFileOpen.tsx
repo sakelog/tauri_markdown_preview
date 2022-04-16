@@ -16,7 +16,7 @@ function ButtonFileOpen() {
   const onHandleInput = useCallback(async () => {
     const { inputTitle, inputMarkdownBody } =
       await fileOpen();
-    if (inputTitle && inputMarkdownBody) {
+    if (inputTitle || inputMarkdownBody) {
       dispatch(setTitle(inputTitle));
       dispatch(setMarkdownBody(inputMarkdownBody));
       dispatch(setHtmlBody());
