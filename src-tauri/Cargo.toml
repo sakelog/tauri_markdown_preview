@@ -1,11 +1,11 @@
 [package]
-name = "app"
+name = "tauri_markdown_preview"
 version = "0.1.0"
-description = "A Tauri App"
-authors = ["you"]
-license = ""
-repository = ""
-default-run = "app"
+description = "Tauri Markdown Preview"
+authors = ["sake <sakelog.website@gmail.com> (https://github.com/sakelog)"]
+license = "MIT"
+repository = "https://github.com/sakelog/tauri_markdown_preview"
+default-run = "tauri_markdown_preview"
 edition = "2021"
 rust-version = "1.57"
 
