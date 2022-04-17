@@ -1,6 +1,6 @@
 [package]
 name = "tauri_markdown_preview"
-version = "0.1.0"
+version = "0.1.1"
 description = "Tauri Markdown Preview"
 authors = ["sake <sakelog.website@gmail.com> (https://github.com/sakelog)"]
 license = "MIT"
