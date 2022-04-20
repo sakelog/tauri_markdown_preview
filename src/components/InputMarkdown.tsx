@@ -15,7 +15,6 @@ import {
   Input,
   Textarea,
   Box,
-  Text,
 } from '@chakra-ui/react';
 import ButtonFileSaveAsMd from 'components/ButtonFileSaveAsMd';
 import SaveFeedback from 'components/SaveFeedback';
@@ -85,9 +84,7 @@ function InputMarkdown() {
       >
         <ButtonFileSaveAsMd />
         <Box>
-          <Text fontSize="md">
-            <SaveFeedback status={statusSaveMd} />
-          </Text>
+          <SaveFeedback status={statusSaveMd} />
         </Box>
       </Flex>
     </Flex>

@@ -5,8 +5,7 @@ import {
 } from '@tauri-apps/api/fs';
 
 // ファイルを開く
-export const fileOpen = async () => {
-  return dialog
+export const fileOpen = async () => dialog
     .open({
       filters: [{ name: 'Markdown', extensions: ['md'] }],
       directory: false,
@@ -34,7 +33,6 @@ export const fileOpen = async () => {
         return { status: false, message: error.message };
       }
     });
-};
 
 // ファイル保存：共通
 const fileSaveCommon = async ({
@@ -45,8 +43,7 @@ const fileSaveCommon = async ({
   name: string;
   extension: string;
   data: FileIO.SaveFile;
-}) => {
-  return dialog
+}) => dialog
     .save({
       defaultPath: data.title,
       filters: [{ name, extensions: [extension] }],
@@ -69,7 +66,7 @@ const fileSaveCommon = async ({
 
         return {
           status: true,
-          filePath: filePath,
+          filePath,
           outputTitle: title,
         };
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -77,7 +74,6 @@ const fileSaveCommon = async ({
         return { status: false, message: error.message };
       }
     });
-};
 
 // ファイル保存：Markdown
 export const fileSaveMd = async (data: FileIO.SaveFile) => {

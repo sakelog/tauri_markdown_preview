@@ -12,12 +12,14 @@ import {
 } from '@chakra-ui/react';
 
 import { lazy } from '@loadable/component';
+
 const InputMarkdown = lazy(
   () => import('components/InputMarkdown')
 );
 const Preview = lazy(() => import('components/Preview'));
 
-const MySuspense = (props: { children: ReactNode }) => {
+function MySuspense(props: { children: ReactNode }) {
+  const { children } = props;
   return (
     <Suspense
       fallback={
@@ -26,10 +28,10 @@ const MySuspense = (props: { children: ReactNode }) => {
         </Center>
       }
     >
-      {props.children}
+      {children}
     </Suspense>
   );
-};
+}
 
 function App() {
   const title = useSelector<RootState>(

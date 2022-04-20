@@ -3,6 +3,7 @@ import { RootState } from 'redux/store';
 
 import { Flex, Box, Text } from '@chakra-ui/react';
 import ButtonFileSaveAsHtml from 'components/ButtonFileSaveAsHtml';
+import SaveFeedback from 'components/SaveFeedback';
 
 function Preview() {
   const htmlBody = useSelector<RootState>(
@@ -107,13 +108,7 @@ function Preview() {
       >
         <ButtonFileSaveAsHtml />
         <Box>
-          <Text fontSize="md">
-            {statusSaveHtml === true
-              ? '保存成功'
-              : statusSaveHtml === false
-              ? '保存失敗'
-              : ''}
-          </Text>
+          <SaveFeedback status={statusSaveHtml} />
         </Box>
       </Flex>
     </Flex>

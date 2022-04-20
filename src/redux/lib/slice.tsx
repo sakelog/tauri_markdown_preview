@@ -1,3 +1,4 @@
+/* eslint no-param-reassign: 0 */
 import { createSlice } from '@reduxjs/toolkit';
 import {
   markdownToHtml,
