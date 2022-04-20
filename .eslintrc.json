@@ -6,8 +6,7 @@
   },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaVersion": 2018,
-    "sourceType": "module",
+    "ecmaVersion": "latest",
     "project": "./tsconfig.json",
     "ecmaFeatures": {
       "jsx": true
@@ -18,8 +17,8 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
-    "react-app",
     "react-app/jest",
+    "airbnb",
     "airbnb-typescript",
     "prettier"
   ],
