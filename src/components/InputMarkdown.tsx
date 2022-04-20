@@ -7,6 +7,8 @@ import {
   setHtmlBody,
 } from 'redux/lib/slice';
 
+import { markdownLint } from 'lib/markdownLint';
+
 import {
   Flex,
   FormControl,
@@ -83,6 +85,16 @@ function InputMarkdown() {
         flexWrap={{ base: 'wrap', md: 'nowrap' }}
       >
         <ButtonFileSaveAsMd />
+        <button
+          type="submit"
+          onClick={() =>
+            markdownLint(
+              '1) Hello, _Jupiter_ and *Neptune*!'
+            )
+          }
+        >
+          Lint
+        </button>
         <Box>
           <SaveFeedback status={statusSaveMd} />
         </Box>
