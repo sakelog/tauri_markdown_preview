@@ -23,8 +23,7 @@ type ReducerState = {
   title: string;
   markdownBody: string;
   markdownAll: string;
-  statusSaveMd: boolean | null;
-  statusSaveHtml: boolean | null;
+  statusSave: boolean | null;
   htmlBody: string;
   htmlAll: string;
 };
@@ -33,8 +32,7 @@ const initialState: ReducerState = {
   title: '',
   markdownBody: '',
   markdownAll: '',
-  statusSaveMd: null,
-  statusSaveHtml: null,
+  statusSave: null,
   htmlBody: '',
   htmlAll: '',
 };
@@ -48,9 +46,6 @@ export const markdownSlice = createSlice({
     },
     setMarkdownBody: (state, action) => {
       state.markdownBody = action.payload;
-    },
-    setStatusSaveMd: (state, action) => {
-      state.statusSaveMd = action.payload;
     },
     setHtmlBody: (state) => {
       state.htmlBody = markdownToHtml(
@@ -69,8 +64,8 @@ export const markdownSlice = createSlice({
         }),
       });
     },
-    setStatusSaveHtml: (state, action) => {
-      state.statusSaveHtml = action.payload;
+    setStatusSave: (state, action) => {
+      state.statusSave = action.payload;
     },
   },
 });
@@ -78,10 +73,9 @@ export const markdownSlice = createSlice({
 export const {
   setTitle,
   setMarkdownBody,
-  setStatusSaveMd,
   setHtmlBody,
   setHtmlAll,
-  setStatusSaveHtml,
+  setStatusSave,
 } = markdownSlice.actions;
 
 export default markdownSlice.reducer;

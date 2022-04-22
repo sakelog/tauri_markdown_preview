@@ -35,6 +35,7 @@ const MySuspense = ({
     {children}
   </Suspense>
 );
+
 const RootGridItem = ({
   children: [header, body],
 }: {
@@ -67,6 +68,7 @@ const App = () => {
   const title = useSelector<RootState>(
     (state) => state.mainState.title
   ) as string;
+
   useEffect(() => {
     updateWindowTitle(title);
   }, [title]);
