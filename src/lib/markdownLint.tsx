@@ -15,9 +15,7 @@ export const markdownLint = async (markdown: string) => {
 
   const result = reporter(checkedMarkdown);
 
-  console.error(result);
-
-  // return result;
+  return result;
 };
 
 export default markdownLint;

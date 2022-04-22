@@ -32,7 +32,7 @@ const InputTitle = () => {
       <Text
         flexShrink={0}
         mr={2}
-        rounded="xl"
+        rounded="2xl"
         bg="black"
         color="white"
         px={2}
