@@ -11,6 +11,7 @@ import { setTitle, setStatusSave } from 'redux/lib/slice';
 
 // component
 import { Button, useDisclosure } from '@chakra-ui/react';
+import { FaMarkdown } from 'react-icons/fa';
 
 const SaveFalse = loadable(
   () => import('components/SaveFalse')
@@ -57,6 +58,7 @@ const ButtonFileSaveAsMd = () => {
       <Button
         onClick={onHandleSave}
         disabled={statusSave ?? false}
+        leftIcon={<FaMarkdown />}
       >
         Markdownとして保存
       </Button>

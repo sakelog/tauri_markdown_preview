@@ -15,6 +15,7 @@ import {
 
 // component
 import { Button } from '@chakra-ui/react';
+import { FaFolderOpen } from 'react-icons/fa';
 
 // Main
 const ButtonFileOpen = () => {
@@ -37,6 +38,8 @@ const ButtonFileOpen = () => {
     <Button
       onClick={onHandleInput}
       disabled={statusOpen ?? false}
+      leftIcon={<FaFolderOpen />}
+      colorScheme="green"
     >
       ファイルを開く
     </Button>

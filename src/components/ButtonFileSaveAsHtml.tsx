@@ -15,6 +15,7 @@ import {
 
 // component
 import { Button, useDisclosure } from '@chakra-ui/react';
+import { FaHtml5 } from 'react-icons/fa';
 
 const SaveFalse = loadable(
   () => import('components/SaveFalse')
@@ -62,6 +63,7 @@ const ButtonFileSaveAsHtml = () => {
       <Button
         onClick={onHandleSave}
         disabled={statusSave ?? false}
+        leftIcon={<FaHtml5 />}
       >
         HTMLとして保存
       </Button>
