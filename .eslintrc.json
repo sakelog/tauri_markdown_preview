@@ -25,6 +25,13 @@
   "plugins": ["@typescript-eslint", "react", "react-hooks"],
   "rules": {
     "react-hooks/exhaustive-deps": "off",
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ]
   }
 }
