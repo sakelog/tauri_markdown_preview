@@ -23,6 +23,7 @@ type ReducerState = {
   title: string;
   markdownBody: string;
   markdownAll: string;
+  statusOpen: boolean | null;
   statusSave: boolean | null;
   htmlBody: string;
   htmlAll: string;
@@ -32,6 +33,7 @@ const initialState: ReducerState = {
   title: '',
   markdownBody: '',
   markdownAll: '',
+  statusOpen: null,
   statusSave: null,
   htmlBody: '',
   htmlAll: '',
@@ -64,6 +66,9 @@ export const markdownSlice = createSlice({
         }),
       });
     },
+    setStatusOpen: (state, action) => {
+      state.statusOpen = action.payload;
+    },
     setStatusSave: (state, action) => {
       state.statusSave = action.payload;
     },
@@ -75,6 +80,7 @@ export const {
   setMarkdownBody,
   setHtmlBody,
   setHtmlAll,
+  setStatusOpen,
   setStatusSave,
 } = markdownSlice.actions;
 

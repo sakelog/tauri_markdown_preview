@@ -46,7 +46,7 @@ const ButtonFileSaveAsHtml = () => {
     setTimeout(() => {
       dispatch(setStatusSave(null));
     }, 5000);
-  }, [htmlAll, statusSave]);
+  }, [htmlAll]);
 
   const { isOpen, onOpen, onClose } = useDisclosure();
   const cancelRef = useRef<HTMLButtonElement>(null);
