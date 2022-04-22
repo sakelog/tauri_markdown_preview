@@ -1,4 +1,3 @@
-import { ReactNode } from 'react';
 import {
   Alert,
   AlertIcon,
@@ -13,26 +12,21 @@ type PropsType = {
 function SaveFeedback(props: PropsType) {
   const { status } = props;
 
-  let result: ReactNode | null;
-  if (status === true) {
-    result = (
+  if (status !== null) {
+    const result = status ? (
       <Alert status="success">
         <AlertIcon />
         <AlertTitle>保存成功</AlertTitle>
       </Alert>
-    );
-  }
-  if (status === false) {
-    result = (
+    ) : (
       <Alert status="error">
         <AlertIcon />
         <AlertTitle>保存失敗</AlertTitle>
       </Alert>
     );
-  } else {
-    result = null;
+    return <Fade in={status !== null}>{result}</Fade>;
   }
-  return <Fade in={status !== null}>{result}</Fade>;
+  return null;
 }
 
 export default SaveFeedback;
