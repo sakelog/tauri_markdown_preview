@@ -1,9 +1,13 @@
 /*===========================================
-  Foundation
+   Foundation
   ===========================================*/
 @import './Foundation/base.scss';
 /*===========================================
     Object
-    ===========================================*/
+  ===========================================*/
+// Layout
+// Component
+// Project
+@import './Object/Project/p-preview.scss';
 // Utility
 @import './Object/Utility/u-highlight.scss';
