@@ -19,6 +19,7 @@ const SaveFalse = loadable(
 
 // Main
 const ButtonFileSaveAsMd = () => {
+  // redux__state
   const title = useSelector<RootState>(
     (state) => state.mainState.title
   ) as string;
@@ -29,6 +30,7 @@ const ButtonFileSaveAsMd = () => {
     (state) => state.mainState.statusSave
   ) as boolean | null;
 
+  // redux__dispatch
   const dispatch = useDispatch<AppDispatch>();
   const onHandleSave = useCallback(async () => {
     const { outputTitle, status } = await fileSaveMd({
@@ -42,7 +44,7 @@ const ButtonFileSaveAsMd = () => {
     setTimeout(() => {
       dispatch(setStatusSave(null));
     }, 5000);
-  }, [markdownBody]);
+  }, [title, markdownBody]);
 
   const { isOpen, onOpen, onClose } = useDisclosure();
   const cancelRef = useRef<HTMLButtonElement>(null);

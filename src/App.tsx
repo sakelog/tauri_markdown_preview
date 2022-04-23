@@ -1,8 +1,13 @@
 import { useEffect, Suspense, type ReactNode } from 'react';
-import { useSelector } from 'react-redux';
-import type { RootState } from 'redux/store';
+
+// lib
 import { updateWindowTitle } from 'lib/updateWindowTitle';
 
+// redux
+import { useSelector } from 'react-redux';
+import type { RootState } from 'redux/store';
+
+// component
 import Layout from 'layout/base';
 import {
   Grid,
@@ -64,7 +69,9 @@ const RootGridItem = ({
   </GridItem>
 );
 
+// Main
 const App = () => {
+  // redux__state
   const title = useSelector<RootState>(
     (state) => state.mainState.title
   ) as string;
