@@ -18,12 +18,15 @@ type PropTypes = {
 const ResultLint = (props: PropTypes) => {
   const { isOpen, onClose, result } = props;
   return (
-    <Modal isOpen={isOpen} onClose={onClose}>
+    <Modal isOpen={isOpen} onClose={onClose} size="xl">
       <ModalOverlay />
       <ModalContent>
         <ModalHeader>文法チェック結果</ModalHeader>
         <ModalCloseButton />
-        <ModalBody>{result}</ModalBody>
+        <ModalBody
+          dangerouslySetInnerHTML={{ __html: result }}
+          style={{ whiteSpace: 'pre-wrap' }}
+        />
       </ModalContent>
     </Modal>
   );

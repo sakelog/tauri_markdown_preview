@@ -10,7 +10,7 @@ import { RootState } from 'redux/store';
 
 // component
 import { Button, useDisclosure } from '@chakra-ui/react';
-import { FaMarkdown } from 'react-icons/fa';
+import { FiCheck } from 'react-icons/fi';
 
 const ResultLint = loadable(
   () => import('components/ResultLint')
@@ -36,7 +36,7 @@ const ButtonMdLint = () => {
           handleResult();
           onOpen();
         }}
-        leftIcon={<FaMarkdown />}
+        leftIcon={<FiCheck />}
         colorScheme="orange"
       >
         Markdown文法チェック
