@@ -1,9 +1,4 @@
-import {
-  Flex,
-  Spacer,
-  // Box,
-  ButtonGroup,
-} from '@chakra-ui/react';
+import { Flex, Spacer } from '@chakra-ui/react';
 
 import ButtonFileInput from 'components/ButtonFileOpen';
 import ButtonMdLint from 'components/ButtonMdLint';
@@ -14,12 +9,13 @@ const Footer = () => (
   <footer>
     <Flex p={2} bg="gray.600" overflow="hidden">
       <Spacer />
-      <ButtonGroup flexWrap="wrap" gap={1}>
+      <Flex flexWrap="wrap" gap={2}>
         <ButtonFileInput />
         <ButtonMdLint />
         <ButtonFileSaveAsMd />
         <ButtonFileSaveAsHtml />
-      </ButtonGroup>
+      </Flex>
+      <Spacer />
     </Flex>
   </footer>
 );
