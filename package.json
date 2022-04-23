@@ -2,7 +2,7 @@
   "name": "tauri_markdown_preview",
   "productName": "Tauri Markdown Previewer",
   "description": "Markdown Preview With Tauri + React",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "license": "MIT",
   "author": "sake <sakelog.website@gmail.com> (https://github.com/sakelog)",
   "dependencies": {
