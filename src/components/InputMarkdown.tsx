@@ -34,21 +34,9 @@ const InputMarkdown = () => {
       spellCheck={false}
       variant="filled"
       rounded="none"
-      bg="blue.50"
       placeholder="マークダウン形式で入力"
     />
   );
 };
-
-/* <button
-        type="submit"
-        onClick={() =>
-          markdownLint(
-            '1) Hello, _Jupiter_ and *Neptune*!'
-          )
-        }
-      >
-        Lint
-      </button> */
 
 export default InputMarkdown;

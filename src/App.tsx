@@ -41,7 +41,7 @@ const RootGridItem = ({
 }: {
   children: [header: ReactNode, body: ReactNode];
 }) => (
-  <GridItem h="inherit" overflow="hidden" bg="white">
+  <GridItem h="inherit" overflow="hidden">
     <Grid
       h="inherit"
       templateRows="repeat(12 , 1fr)"
@@ -86,7 +86,6 @@ const App = () => {
         }}
         gap="0"
         h="100%"
-        bg="gray.100"
       >
         <RootGridItem>
           {/* header */}

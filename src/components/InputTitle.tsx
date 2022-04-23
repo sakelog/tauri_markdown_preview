@@ -1,8 +1,11 @@
 import { useCallback } from 'react';
+
+// redux
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from 'redux/store';
 import { setTitle, setHtmlBody } from 'redux/lib/slice';
 
+// component
 import { FormLabel, Text, Input } from '@chakra-ui/react';
 
 const InputTitle = () => {
@@ -18,6 +21,7 @@ const InputTitle = () => {
     },
     [title]
   );
+
   return (
     <FormLabel
       htmlFor="markdownTitle"
@@ -46,8 +50,9 @@ const InputTitle = () => {
         onChange={(e) => onTitleChange(e.target.value)}
         variant="flushed"
         type="text"
-        bg="whiteAlpha.700"
         px={4}
+        color="gray.800"
+        bg="whiteAlpha.700"
       />
     </FormLabel>
   );
