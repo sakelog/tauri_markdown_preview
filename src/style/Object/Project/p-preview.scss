@@ -1,0 +1,65 @@
+.p-preview {
+  line-height: var(--chakra-lineHeights-taller);
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: var(--chakra-fontSizes-4xl);
+    margin-bottom: var(--chakra-space-4);
+    padding: var(--chakra-space-2);
+  }
+  h1,
+  h2 {
+    font-size: var(--chakra-fontSizes-4xl);
+  }
+  h1 {
+    padding: var(--chakra-space-2);
+    font-weight: var(--chakra-fontWeights-bold);
+    border-bottom: 3px solid;
+  }
+  h2 {
+    background-color: var(--chakra-colors-gray-100);
+    color: var(--chakra-colors-gray-800);
+  }
+  h3,
+  h4 {
+    font-size: var(--chakra-fontSizes-2xl);
+  }
+  h3 {
+    font-weight: var(--chakra-fontWeights-bold);
+    border: 2px solid var(--chakra-colors-gray-400);
+  }
+  h5,
+  h6 {
+    font-size: var(--chakra-fontSizes-xl);
+  }
+  h5 {
+    font-weight: var(--chakra-fontWeights-bold);
+  }
+  blockQuote {
+    border-left: 3px solid var(--chakra-colors-gray-400);
+    font-style: italic;
+    padding-left: var(--chakra-space-2);
+  }
+  a {
+    color: var(--chakra-colors-blue-400);
+    text-decoration: underline;
+  }
+  img {
+    margin: var(--chakra-space-4);
+  }
+  pre {
+    margin-top: var(--chakra-space-2);
+    margin-bottom: var(--chakra-space-2);
+  }
+  ul,
+  ol {
+    list-style-position: inside;
+  }
+  hr {
+    background-color: var(--chakra-colors-gray-400);
+    margin-top: var(--chakra-space-2);
+    margin-bottom: var(--chakra-space-2);
+  }
+}

@@ -18,6 +18,7 @@
     "framer-motion": "^6.3.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-icons": "^4.3.1",
     "react-redux": "^7.2.8",
     "react-scripts": "5.0.1",
     "rehype-document": "^6.0.1",
@@ -25,17 +26,37 @@
     "rehype-highlight": "^5.0.2",
     "rehype-stringify": "^9.0.3",
     "remark-parse": "^10.0.1",
+    "remark-preset-lint-consistent": "^5.1.1",
+    "remark-preset-lint-recommended": "^6.1.2",
     "remark-rehype": "^10.1.0",
+    "remark-stringify": "^10.0.2",
     "typescript": "^4.4.2",
     "unified": "^10.1.2",
+    "vfile-reporter": "^7.0.4",
     "web-vitals": "^2.1.0"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^1.0.0-rc.8",
+    "@types/jest": "^27.4.1",
+    "@types/loadable__component": "^5.13.4",
+    "@types/react": "^18.0.5",
+    "@types/react-dom": "^18.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.20.0",
+    "@typescript-eslint/parser": "^5.19.0",
+    "cross-env": "^7.0.3",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.4.0",
+    "sass": "^1.50.0"
   },
   "scripts": {
     "start": "cross-env BROWSER=none react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint --fix --ext .ts,.tsx .",
+    "lint": "eslint --ext .ts,.tsx src/",
     "tauri": "tauri",
     "dev": "tauri dev",
     "release": "tauri build"
@@ -51,20 +72,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@tauri-apps/cli": "^1.0.0-rc.8",
-    "@types/jest": "^27.4.1",
-    "@types/loadable__component": "^5.13.4",
-    "@types/react": "^18.0.5",
-    "@types/react-dom": "^18.0.1",
-    "@typescript-eslint/eslint-plugin": "^5.19.0",
-    "@typescript-eslint/parser": "^5.19.0",
-    "cross-env": "^7.0.3",
-    "eslint-config-airbnb-typescript": "^17.0.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-react": "^7.29.4",
-    "eslint-plugin-react-hooks": "^4.4.0",
-    "sass": "^1.50.0"
   }
 }
